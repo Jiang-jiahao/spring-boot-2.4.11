@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'org.springframework.boot'
+version '2.4.11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    compile(project(":spring-boot-project:spring-boot-starters:spring-boot-starter-web")) {
+        exclude group: "org.hibernate.validator"
+    }
+    compile(project(":spring-boot-project:spring-boot-starters:spring-boot-starter-actuator"))
+
+    compile(enforcedPlatform(project(path: ":spring-boot-project:spring-boot-parent")))
+//    compile(project(":spring-boot-project:spring-boot-starters:spring-boot-starter-test"))
+//    compile(project(":spring-boot-project:spring-boot-tools:spring-boot-test-support"))
+//    compileOnly("org.apache.httpcomponents:httpasyncclient")
+//    compileOnly("org.awaitility:awaitility")
+//    compileOnly("org.springframework:spring-web")
+//    providedRuntime(project(":spring-boot-project:spring-boot-starters:spring-boot-starter-tomcat"))
+}
+
+test {
+    useJUnitPlatform()
+}

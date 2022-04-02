@@ -1,0 +1,11 @@
+package com.jjh;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class JjhApplication {
+	public static void main(String[] args) {
+		SpringApplication.run(JjhApplication.class);
+	}
+}
